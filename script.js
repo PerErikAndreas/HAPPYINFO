@@ -30,8 +30,11 @@ fetch('http://api.openweathermap.org/data/2.5/weather?q=Austin,US&units=metric&A
     austinWeather.innerHTML = 
     `<h1>
     ${json.name} Texas |
-    ${json.weather[0].main} |
-    ${(Math.round(json.main.temp))}°C
+    ${json.weather[0].main} | 
+
+    ${(Math.round(json.main.temp))}°C |
+        Feels like 
+    ${(json.main.feels_like.toFixed(1))}°C 
     </h1>`
 
 })
@@ -52,4 +55,18 @@ fetch('http://api.open-notify.org/astros.json')
     const numberofpeople = json.number
     peopleInSpace.innerHTML = `
     <h1>${numberofpeople} People are in space</h1>`
-})
+    })
+
+
+////////// AGEIFY API /////////////////
+fetch('https://api.agify.io/?name=christine')    
+
+    .then((response) => {
+    return response.json()
+    })
+    .then((json) => {
+        const agename = json.age
+        const namebig = json.name.toUpperCase();
+        ageOfName.innerHTML =
+          `<h1>  ${agename} år. Så gammal är du enligt ditt namn ${namebig}</h1>`
+    })
