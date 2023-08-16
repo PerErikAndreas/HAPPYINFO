@@ -74,3 +74,17 @@ fetch('https://api.agify.io/?name=christine')
         ageOfName.innerHTML =
           `<h1>  ${agename} år. Så gammal är du enligt ditt namn ${namebig}</h1>`
     })
+
+
+/////// KANYE API //////////////
+fetch('https://api.kanye.rest/')    
+    .then((response) => {
+    return response.json()
+    })
+    .then((json) => {
+        const thequote = json.quote
+        console.log(thequote);
+        quoteOfKanye.innerHTML =
+        `<h1>${thequote}, said Kanye West</h1>`
+})
+        
