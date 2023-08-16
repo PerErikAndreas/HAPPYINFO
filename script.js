@@ -51,10 +51,14 @@ fetch('http://api.open-notify.org/astros.json')
  })
 
     .then((json) => {
-    
-    const numberofpeople = json.number
+        console.log(json);
+        const numberofpeople = json.number
+        const namesofpeople = json.people.map(person => person.name);
+      // const craft = json.people.map(person => person.craft);
     peopleInSpace.innerHTML = `
-    <h1>${numberofpeople} People are in space</h1>`
+    <h1>${numberofpeople} People are in space. Named ${namesofpeople}. First craft in array: 
+        ${json.people[0].craft}
+    </h1>`
     })
 
 
