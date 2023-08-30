@@ -85,6 +85,6 @@ fetch('https://api.kanye.rest/')
         const thequote = json.quote
         console.log(thequote);
         quoteOfKanye.innerHTML =
-        `<h1>${thequote}, said Kanye West</h1>`
+        `Todays Kanye quote: <h1>${thequote}</h1>`
 })
         
